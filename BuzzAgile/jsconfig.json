@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"*": ["app/*"],
+		},
+		"allowSyntheticDefaultImports": true,
+		"jsx": "react",
+	},
+	"include": [
+		"app/*"
+	],
+	"exclude": [
+		"node_modules",
+		"**/node_modules/*"
+	],
+}

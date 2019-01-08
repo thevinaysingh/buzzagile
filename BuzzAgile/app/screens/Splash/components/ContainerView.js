@@ -7,7 +7,7 @@ import {
   Dimensions,
   Animated,
 } from 'react-native';
-import { images } from '../../../assets/images';
+import { images } from 'assets/images';
 
 const { width, height } = Dimensions.get('window');
 

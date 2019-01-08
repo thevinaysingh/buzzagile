@@ -1,0 +1,7 @@
+# expo
+.expo/
+
+# dependencies
+/node_modules
+**/libs
+**/assets

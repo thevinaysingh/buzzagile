@@ -10,12 +10,12 @@ import {
   Alert,
   AsyncStorage,
 } from 'react-native';
-import { images } from '../../assets/images';
-import { showPopupAlert } from '../../utils/showAlert';
+import { images } from 'assets/images';
+import { showAlert } from 'utils/alert';
 import SideMenuCell from './components/SideMenuCell';
 import SideMenuHeader from './components/SideMenuHeader';
 import { resetRoute } from '../../utils/utils_functions';
-import constant, { color, width } from '../../config/appConfig';
+import constant, { color, width } from 'config/appConfig';
 import { localizeStrings } from './localizeStrings';
 
 const leftPadding = (Platform.OS === 'android') ? 56 : 64;

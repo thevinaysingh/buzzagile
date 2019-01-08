@@ -5,7 +5,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { createLogger } from 'redux-logger'
 import { composeWithDevTools } from 'remote-redux-devtools';
-import reducers from '../reducers';
+import reducers from 'reducers';
 
 export const sagaMiddleware = createSagaMiddleware();
 

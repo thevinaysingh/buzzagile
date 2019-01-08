@@ -1,10 +1,10 @@
 import * as Colors from './colors';
-import * as dimensions from './dimensions';
+import * as Dimens from './dimensions';
 import { containerStyles, labelStyles, buttonStyles, iconStyles } from './styles';
 
 export {
   Colors,
-  dimensions,
+  Dimens,
   containerStyles,
   labelStyles,
   buttonStyles,

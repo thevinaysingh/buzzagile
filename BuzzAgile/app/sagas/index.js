@@ -1,7 +1,7 @@
 import { fork } from 'redux-saga/effects';
-import { sagaMiddleware } from '../store';
-import StartupSaga from './startupSaga';
-import watchApi from '../api/saga';
+import { sagaMiddleware } from 'store';
+import StartupSaga from 'sagas/startupSaga';
+import watchApi from 'api/saga';
 
 function* root() {
   yield fork(StartupSaga);

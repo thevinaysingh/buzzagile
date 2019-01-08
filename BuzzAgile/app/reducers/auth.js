@@ -4,33 +4,24 @@ import {
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
   LOGIN_FAILURE,
-  RESET_USER_LOGIN,
-  RESET_LOGOUT,
-} from '../actions/authentication';
+} from 'actions/auth/types';
 
 const initialState = {
   isLoading: false,
-  loginUserResponse: {},
+  loginResponse: {},
 };
 
-function login(state = initialState, action) {
+export const authReducer = (state = initialState, action) => {
   if (action.type === 'undefined') {
     return state;
   }
 
   switch (action.type) {
-    case RESET_USER_LOGIN:
-      return {
-        ...state,
-        isLoading: false,
-        loginUserResponse: {},
-      };
-
     case LOGIN_REQUEST:
       return {
         ...state,
         isLoading: true,
-        loginUserResponse: {},
+        loginResponse: {},
       };
 
     case LOGIN_SUCCESS:
@@ -38,15 +29,8 @@ function login(state = initialState, action) {
       return {
         ...state,
         isLoading: false,
-        loginUserResponse: action.data,
+        loginResponse: action.data,
       };
-
-    case RESET_LOGOUT:
-      return {
-        isLoading: false,
-        loginUserResponse: {},
-      };
-
     default:
       return state;
   }

@@ -1,48 +1,20 @@
-import { Dimensions } from 'react-native';
-import { StackNavigator, DrawerNavigator } from 'react-navigation';
-import Splash from '../screens/Splash';
-import SideMenu from '../screens/SideMenu';
-import Home from '../screens/home';
-
-const { width } = Dimensions.get('window');
-// Drawer stack
-const DrawerStack = DrawerNavigator({
-  Home: {
-    screen: Home,
-    key: 'HomeScreen',
-    navigationOptions: {
-      header: null,
-      gesturesEnabled: true,
-    },
-  },
-}, {
-  initialRouteName: 'Home',
-  contentComponent: SideMenu,
-  drawerWidth: width - 80,
-});
+import { StackNavigator } from 'react-navigation';
+import Splash from 'screens/Splash';
+import { createKeyScreen, screens } from './screens-name';
+import { DrawerStack } from './dashboardStack';
 
 const RootNavigator = StackNavigator({
-  DrawerStack: {
-    screen: DrawerStack,
-  },
+  Dashboard: { screen: DrawerStack },
   Splash: {
     screen: Splash,
-    key: 'SplashScreen',
-    navigationOptions: {
-      header: null,
-      gesturesEnabled: false,
-    },
-  },
-  Home: {
-    screen: Home,
-    key: 'HomeScreen',
+    key: createKeyScreen(screens.SPLASH),
     navigationOptions: {
       header: null,
       gesturesEnabled: false,
     },
   },
 }, {
-  initialRouteName: 'Splash',
+  initialRouteName: screens.INITIAL_SCREEN,
   headerMode: 'none',
 });
 

@@ -1,3 +1,28 @@
 {
-  "presets": ["react-native"]
+  "presets": ["module:metro-react-native-babel-preset"],
+  "plugins": [
+      [
+          "module-resolver",
+          {
+              "root": [
+                  "./app"
+              ],
+              "alias": {
+                  "actions": "./app/actions",
+                  "api": "./app/api",
+                  "assets": "./app/assets",
+                  "images": "./app/assets/images",
+                  "components": "./app/components",
+                  "config": "./app/config",
+                  "navigation": "./app/navigator",
+                  "reducers": "./app/reducers",
+                  "sagas": "./app/sagas",
+                  "screens": "./app/screens",
+                  "utils": "./app/utils",
+                  "theme": "./app/theme",
+                  "store": "./app/store"
+              }
+          }
+      ]
+  ]
 }

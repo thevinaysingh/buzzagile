@@ -1,14 +1,7 @@
 import { bindActionCreators } from 'redux';
-import {
-  userLoginRequest,
-   resetlogout,
-} from './authentication';
-
 import { store } from '../store';
+import { AuthActionCreators } from './auth';
 
-const actions = {
-  userLoginRequest,
-  resetlogout,
-};
-
-export default bindActionCreators(actions, store.dispatch);
+export const ActionCreators = bindActionCreators({
+    ...AuthActionCreators,
+}, store.dispatch);
