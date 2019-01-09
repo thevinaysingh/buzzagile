@@ -9,13 +9,9 @@ import PropTypes from 'prop-types';
 import {
   Text,
   View,
-  Animated,
   Dimensions,
   TouchableOpacity
 } from 'react-native';
-import { NavigationActions } from 'react-navigation';
-import StatusBar from '../../components/StatusBar';
-const { width, height } = Dimensions.get('window');
 import NavigationBar from '../../components/NavigationBar';
 import images from '../../assets/images';
 
@@ -31,7 +27,6 @@ class Home extends Component {
 
   }
   sideMenuAction() {
-    console.log('===============');
     this.props.navigation.navigate('DrawerOpen');
   }
   popBack() {

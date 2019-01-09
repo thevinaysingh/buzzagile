@@ -23,23 +23,23 @@ const leftPadding = (Platform.OS === 'android') ? 56 : 64;
 const menuData = [
   {
     // name: localizeStrings.lobby,
-    icon: images.lobby,
+    // icon: images.lobby,
   },
   {
   //   name: localizeStrings.matchDetail,
-    icon: images.lock,
+    // icon: images.lock,
   },
   {
     // name: localizeStrings.mybets,
-    icon: images.mybets,
+    // icon: images.mybets,
   },
   {
     // name: localizeStrings.myProfile,
-    icon: images.profile,
+    // icon: images.profile,
   },
   {
     // name: localizeStrings.myWallet,
-    icon: images.wallet,
+    // icon: images.wallet,
   },
   // {
   //   // name: localizeStrings.notifications,
@@ -75,7 +75,7 @@ const menuData = [
   // },
   {
     name: localizeStrings.logout,
-    icon: images.logout,
+    // icon: images.logout,
   },
 ];
 

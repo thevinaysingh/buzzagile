@@ -25,6 +25,8 @@
     "react-native-image-picker": "^0.27.1",
     "react-native-permissions": "^1.1.1",
     "react-native-phone-input": "^0.2.1",
+    "react-native-app-intro-slider": "^1.0.1",
+    "react-native-localization": "^1.0.9",
     "react-navigation": "^2.2.0",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",
