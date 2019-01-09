@@ -5,9 +5,9 @@
  */
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-import { store } from './app/store';
-import runRootSaga from './app/sagas';
-import Navigator from './app/navigator';
+import { store } from 'store';
+import runRootSaga from 'sagas';
+import Navigator from 'navigator';
 
 export default class App extends Component {
   constructor() {

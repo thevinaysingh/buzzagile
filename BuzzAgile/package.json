@@ -5,8 +5,8 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "start-clean": "yarn start --reset-cache",
-    "lint": "esw app/**",
-    "lint-watch": "esw -w --changed app/**",
+    "lint": "esw src/**",
+    "lint-watch": "esw -w --changed src/**",
     "clean": "watchman watch-del-all && npm cache clean --force && yarn cache clean",
     "clean-port": "kill -9 $(lsof -ti tcp:8081)",
     "ios-clean-build": "rm -rf ios/build/",
