@@ -26,7 +26,7 @@ class Splash extends Component {
    },2000);
   }
   sideMenuAction() {
-    this.props.navigation.navigate('Home');
+    this.props.navigation.navigate('SelectLanguage');
   }
   render() {
     return (

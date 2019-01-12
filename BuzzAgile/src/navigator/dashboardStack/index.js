@@ -7,16 +7,16 @@ import { createKeyScreen, screens } from '../screens-name';
 const { width } = Dimensions.get('window');
 
 export const DrawerStack = DrawerNavigator({
-    Home: {
-      screen: Home,
-      key: createKeyScreen(screens.HOME),
-      navigationOptions: {
-        header: null,
-        gesturesEnabled: true,
-      },
+  Home: {
+    screen: Home,
+    key: createKeyScreen(screens.HOME),
+    navigationOptions: {
+      header: null,
+      gesturesEnabled: true,
     },
-  }, {
-    initialRouteName: screens.HOME,
-    contentComponent: SideMenu,
-    drawerWidth: width - 80,
-  });
+  },
+}, {
+  initialRouteName: screens.HOME,
+  contentComponent: SideMenu,
+  drawerWidth: width - 80,
+});
