@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {
   TextInput,
   StyleSheet,
+  Text,
   ImageBackground,
 } from 'react-native';
 import { images } from '../assets/images';
@@ -30,10 +31,10 @@ const CustomInput = props => (
     style={ styles.RoundedbuttonStyle }
   >
     <TextInput
-      style={{ height: 50, fontSize: 18, bottom: 5 }}
+      style={{ height: 50, fontSize: 18, bottom: 5, alignSelf: 'stretch', marginHorizontal: 15 }}
+      underlineColorAndroid="transparent"
       placeholder={ props.placeholder }
       value={props.text}
-      onChangeText={(text) => this.setState({text})}
       onChangeText={(text) => props.onChange(text)}
     />
   </ImageBackground>
