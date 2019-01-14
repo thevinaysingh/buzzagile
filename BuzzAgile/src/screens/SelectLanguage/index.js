@@ -10,22 +10,15 @@ import {
   View,
   Dimensions,
 } from 'react-native';
-import RoundedButtonFilled from '../../components/RoundedButtonFilled';
+import RoundedButton from '../../components/RoundedButton';
 import Logo from '../../components/Logo';
-import CustomText from '../../components/CustomText';
-import CustomInput from '../../components/CustomInput';
-import { images } from '../../assets/images';
 
-// export let navigatorObject = null;
+export let navigatorObject = null;
 
 class SelectLanguage extends Component {
   constructor(props) {
     super(props);
     navigatorObject = props.navigation;
-    this.state = {
-      phoneNumber: '',
-      password: '',
-    };
   }
 
   componentDidMount() {
@@ -34,46 +27,22 @@ class SelectLanguage extends Component {
   sideMenuAction() {
     // this.props.navigation.navigate('Home');
   }
-  backPress() {
-  }
-  getStartedPress() {
-  }
-  loginPress() {
-  }
+  onSelectLanguage() {
 
-  onChangePhoneNumber(phoneNumber) {
-    this.setState({
-      phoneNumber,
-    });
-  }
-
-  onChangePassword(password) {
-    this.setState({
-      password,
-    });
   }
 
   render() {
     return (
       <View style={{ flex: 1, backgroundColor: 'white' }}>
-        <View style={{ flex: 1.5, alignItems: 'center' }}>
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
           <Logo />
         </View>
-        <View style={{ flex: 0.4, alignItems: 'center' }}>
-          <CustomText title="We transfer your prize money via paytm" />
-        </View>
-        <View style={{ flex: 2, alignItems: 'center' }}>
-          <CustomInput
-            placeholder="Enter verification code"
-            // text={ this.state.phoneNumber }
-            // onChange={ this.onChangePhoneNumber() }
-          />
-          <RoundedButtonFilled
-            imagebg={ images.done }
-            onPress={ this.loginPress() }
+        <View style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center' }}>
+          <RoundedButton
+            onPress={() => this.onSelectLanguage()}
+            title="Select Language"
           />
         </View>
-
       </View>
     );
   }
