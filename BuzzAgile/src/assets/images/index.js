@@ -8,6 +8,9 @@ const login = require('./login.png');
 const tick = require('./tick.png');
 const inputField = require('./input-border.png');
 const done = require('./Done.png');
+const submit = require('./submit.png');
+const facebook = require('./facebook-btn.png');
+const profileImage = require('./profile.png');
 
 export const images = {
   splash,
@@ -18,5 +21,8 @@ export const images = {
   login,
   tick,
   inputField,
-  done
+  done,
+  submit,
+  facebook,
+  profileImage
 };
