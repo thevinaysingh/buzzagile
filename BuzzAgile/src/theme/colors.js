@@ -2,8 +2,10 @@
 /* Start */
 
 const appRedColor = '#ff0032';
+const appVioletlor = 'rgb(121, 104, 197)';
 const appGreyColor = '#22272e';
 const appWhiteColor = 'white';
+const appBlackColor = 'black';
 
 /* Actual colors */
 /* Stop */
@@ -15,6 +17,8 @@ export default {
   appRedColor,
   appGreyColor,
   appWhiteColor,
+  appBlackColor,
+  appVioletlor,
 };
 
 /* Colors used in whole application */
