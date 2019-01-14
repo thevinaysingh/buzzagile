@@ -11,6 +11,7 @@ const done = require('./Done.png');
 const submit = require('./submit.png');
 const facebook = require('./facebook-btn.png');
 const profileImage = require('./profile.png');
+const nextButtonImage = require('./next.png');
 
 export const images = {
   splash,
@@ -24,5 +25,6 @@ export const images = {
   done,
   submit,
   facebook,
-  profileImage
+  profileImage,
+  nextButtonImage,
 };
