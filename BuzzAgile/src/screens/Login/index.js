@@ -1,61 +1,41 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  View,
-  Dimensions,
-} from 'react-native';
-import RoundedButtonFilled from '../../components/RoundedButtonFilled';
-import Logo from '../../components/Logo';
-import CustomText from '../../components/CustomText';
-import CustomInput from '../../components/CustomInput';
-import { images } from '../../assets/images';
+import { View } from 'react-native';
+import { RootContainer } from 'components/AppStyledComponents';
+import RoundedButtonFilled from 'components/RoundedButtonFilled';
+import Logo from 'components/Logo';
+import CustomText from 'components/CustomText';
+import { images } from 'assets/images';
+import CustomInput from 'components/CustomInput';
 
-// export let navigatorObject = null;
+/**
+  * @desc this class will handle login functionality
+  * @author Pushpendra mishra pushpendra.mishra660@gmail.com
+  * @required null
+*/
 
-class SelectLanguage extends Component {
+class Login extends Component {
   constructor(props) {
     super(props);
-    navigatorObject = props.navigation;
     this.state = {
       phoneNumber: '',
       password: '',
     };
   }
 
-  componentDidMount() {
-  }
-
-  sideMenuAction() {
-    // this.props.navigation.navigate('Home');
-  }
-  backPress() {
-  }
-  getStartedPress() {
-  }
-  loginPress() {
-  }
-
-  onChangePhoneNumber(phoneNumber) {
+  onChangeState = (key, value) => {
     this.setState({
-      phoneNumber,
+      [key]: value,
     });
   }
 
-  onChangePassword(password) {
-    this.setState({
-      password,
-    });
+  onPressLogin = () => {
+    alert('Login clicked');
   }
 
   render() {
     return (
-      <View style={{ flex: 1, backgroundColor: 'white' }}>
+      <RootContainer>
         <View style={{ flex: 2, alignItems: 'center' }}>
           <Logo />
         </View>
@@ -65,35 +45,29 @@ class SelectLanguage extends Component {
         <View style={{ flex: 2, alignItems: 'center' }}>
           <CustomInput
             placeholder="Phone Number"
-            // text={ this.state.phoneNumber }
-            // onChange={ this.onChangePhoneNumber() }
+            text={ this.state.phoneNumber }
+            onChange={ txt => this.onChangeState('phoneNumber', txt) }
           />
           <CustomInput
             placeholder="Password"
-            // text={ this.state.password }
-            // onChange={ this.onChangePassword() }
+            text={ this.state.password }
+            onChange={ txt => this.onChangeState('password', txt) }
           />
         </View>
         <View style={{ flex: 1, alignItems: 'center' }}>
           <RoundedButtonFilled
             imagebg={ images.login }
-            onPress={ this.loginPress() }
+            onPress={ this.onPressLogin }
           />
-          <CustomText
-            title="Terms & conditions"
-          />
+          <CustomText title="Terms & conditions" />
         </View>
-      </View>
+      </RootContainer>
     );
   }
 }
 
-SelectLanguage.propTypes = {
-  navigation: PropTypes.objectOf(PropTypes.any),
+Login.propTypes = {
+  navigation: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
-SelectLanguage.defaultProps = {
-  navigation: {},
-};
-
-export default SelectLanguage;
+export default Login;

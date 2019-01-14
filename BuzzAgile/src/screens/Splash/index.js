@@ -1,50 +1,49 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  View,
-  Dimensions,
-} from 'react-native';
-import ContainerView from './components/ContainerView';
+import styled from 'styled-components';
+import { images } from 'assets/images';
+import { RootContainer } from 'components/AppStyledComponents';
+import { screens } from 'navigator/screens-name';
 
-export let navigatorObject = null;
+/**
+  * @desc this class will display the splash image only
+  * @author Pushpendra mishra pushpendra.mishra660@gmail.com
+  * @required null
+*/
+
+const SPLASH_TIME_OUT = 2000;
 
 class Splash extends Component {
   constructor(props) {
     super(props);
-    navigatorObject = props.navigation;
   }
 
   componentDidMount() {
-    setTimeout( () => {
-      this.sideMenuAction();
-   },2000);
+    setTimeout(() => { this.pushNextScreen(); }, SPLASH_TIME_OUT);
   }
-  sideMenuAction() {
-    this.props.navigation.navigate('SelectLanguage');
+
+  pushNextScreen() {
+    this.props.navigation.navigate(screens.ON_BOARDING);
   }
+
   render() {
     return (
-      <View style={{ flex: 1 }}>
-         <ContainerView 
-          sideMenuAction={() => this.sideMenuAction()}
-         />
-      </View>
+      <RootContainer>
+        <SplashImageView source={ images.splash } resizeMode="cover" />
+      </RootContainer>
     );
   }
 }
 
-Splash.propTypes = {
-  navigation: PropTypes.objectOf(PropTypes.any),
-};
+const SplashImageView = styled.ImageBackground`
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+`;
 
-Splash.defaultProps = {
-  navigation: {},
+Splash.propTypes = {
+  navigation: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
 export default Splash;

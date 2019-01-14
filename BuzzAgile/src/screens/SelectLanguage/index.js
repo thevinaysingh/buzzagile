@@ -1,59 +1,45 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  View,
-  Dimensions,
-} from 'react-native';
-import RoundedButton from '../../components/RoundedButton';
-import Logo from '../../components/Logo';
-
-export let navigatorObject = null;
+import RoundedButton from 'components/RoundedButton';
+import Logo from 'components/Logo';
+import { RootContainer, FlexContainerCenteredChild } from 'components/AppStyledComponents';
+import { screens } from 'navigator/screens-name';
 
 class SelectLanguage extends Component {
   constructor(props) {
     super(props);
-    navigatorObject = props.navigation;
+    this.state = {
+      selectedLaguage: 'English',
+    };
   }
 
-  componentDidMount() {
-  }
-
-  sideMenuAction() {
-    // this.props.navigation.navigate('Home');
-  }
   onSelectLanguage() {
-
+    // TODO: Implement select language functionality.
+    console.log('selectedLaguage', this.state.selectedLaguage);
+    this.props.navigation.navigate(screens.WELCOME);
   }
 
   render() {
     return (
-      <View style={{ flex: 1, backgroundColor: 'white' }}>
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <RootContainer>
+        <FlexContainerCenteredChild>
           <Logo />
-        </View>
-        <View style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center' }}>
+        </FlexContainerCenteredChild>
+        <FlexContainerCenteredChild
+          style={{ justifyContent: 'flex-start' }}
+        >
           <RoundedButton
-            onPress={() => this.onSelectLanguage()}
             title="Select Language"
+            onPress={ () => this.onSelectLanguage() }
           />
-        </View>
-      </View>
+        </FlexContainerCenteredChild>
+      </RootContainer>
     );
   }
 }
 
 SelectLanguage.propTypes = {
-  navigation: PropTypes.objectOf(PropTypes.any),
-};
-
-SelectLanguage.defaultProps = {
-  navigation: {},
+  navigation: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
 export default SelectLanguage;
