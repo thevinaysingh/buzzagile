@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     height: 40,
     color: '#0000ff',
   },
-  RoundedbuttonStyle: {
+  roundedbuttonStyle: {
     width: '70%',
     height: 60,
     justifyContent: 'center',
@@ -29,10 +29,10 @@ const styles = StyleSheet.create({
 const RoundedButton = props => (
   <ImageBackground
     source={ images.roundedborder }
-    style={ styles.RoundedbuttonStyle }
+    style={ styles.roundedbuttonStyle }
   >
     <TouchableOpacity
-      style={ styles.RoundedbuttonStyle }
+      style={ styles.roundedbuttonStyle }
       onPress={ () => props.onPress() }
     >
       <Text style={ styles.buttonStyle }>{ props.title }</Text>
