@@ -5,6 +5,7 @@ import { DrawerStack } from './dashboardStack';
 import Splash from '../screens/Splash';
 import Slider from '../screens/Slider';
 import SelectLanguage from '../screens/SelectLanguage';
+import Notification from '../screens/Notification';
 
 const RootNavigator = StackNavigator({
   Dashboard: { screen: DrawerStack },
@@ -27,6 +28,14 @@ const RootNavigator = StackNavigator({
   SelectLanguage: {
     screen: SelectLanguage,
     key: createKeyScreen(screens.SELECT_LANGUAGE),
+    navigationOptions: {
+      header: null,
+      gesturesEnabled: false,
+    },
+  },
+  Notification: {
+    screen: Notification,
+    key: createKeyScreen(screens.NOTIFICATION),
     navigationOptions: {
       header: null,
       gesturesEnabled: false,
