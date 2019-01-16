@@ -27,6 +27,7 @@ class Home extends Component {
 
   }
   sideMenuAction() {
+    console.log('============', this.props )
     this.props.navigation.navigate('DrawerOpen');
   }
   popBack() {
@@ -40,8 +41,8 @@ class Home extends Component {
         title='test'
         showBackButton={Boolean(true)}
         // backButtonImage={images.backbutton}
-        backButtonAction={() => this.popBack()}
-        // backButtonAction={() => this.sideMenuAction()}
+        // backButtonAction={() => this.popBack()}
+        backButtonAction={() => this.sideMenuAction()}
         hideRightView={true}
       />
         <TouchableOpacity

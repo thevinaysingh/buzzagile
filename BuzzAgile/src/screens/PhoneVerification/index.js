@@ -8,6 +8,7 @@ import Logo from 'components/Logo';
 import CustomText from 'components/CustomText';
 import CustomInput from 'components/CustomInput';
 import CustomBackButton from 'components/CustomBackButton';
+import { screens } from 'navigator/screens-name';
 
 class PhoneVerification extends Component {
   constructor(props) {
@@ -18,7 +19,9 @@ class PhoneVerification extends Component {
   }
 
   onPressDone = () => {
-    alert('Done clicked');
+    // alert('Done clicked');
+    this.props.navigation.navigate(screens.CREATE_PROFILE);
+    //CreateProfile
   }
 
   onChangeVerificationCode = (verificationCode) => {

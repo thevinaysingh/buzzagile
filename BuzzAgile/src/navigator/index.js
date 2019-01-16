@@ -7,6 +7,7 @@ import Welcome from 'screens/Welcome';
 import Login from 'screens/Login';
 import EnterPhone from 'screens/EnterPhone';
 import PhoneVerification from 'screens/PhoneVerification';
+import CreateProfile from 'screens/CreateProfile';
 import { DrawerStack } from './dashboardStack';
 import { createKeyScreen, screens } from './screens-name';
 
@@ -63,6 +64,14 @@ const RootNavigator = StackNavigator({
   PhoneVerification: {
     screen: PhoneVerification,
     key: createKeyScreen(screens.PHONE_VERIFICATION),
+    navigationOptions: {
+      header: null,
+      gesturesEnabled: false,
+    },
+  },
+  CreateProfile: {
+    screen: CreateProfile,
+    key: createKeyScreen(screens.CREATE_PROFILE),
     navigationOptions: {
       header: null,
       gesturesEnabled: false,

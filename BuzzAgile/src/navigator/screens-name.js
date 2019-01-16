@@ -10,6 +10,8 @@ export const screens = {
   DASHBOARD: 'Dashboard',
   HOME: 'Home',
   INITIAL_SCREEN: 'Splash',
+  CREATE_PROFILE: 'CreateProfile',
+  DRAWER_STACK: 'DrawerStack',
 };
 
 export const createKeyScreen = screen => `${screen}Screen`;

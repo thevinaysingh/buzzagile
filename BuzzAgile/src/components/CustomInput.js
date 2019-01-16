@@ -31,7 +31,7 @@ const CustomInput = props => (
     style={ styles.RoundedbuttonStyle }
   >
     <TextInput
-      style={{ height: 50, fontSize: 18, bottom: 5, alignSelf: 'stretch', marginHorizontal: 15 }}
+      style={{ height: 50, fontSize: 18, bottom: 5, alignSelf: 'stretch', marginHorizontal: 25 }}
       underlineColorAndroid="transparent"
       placeholder={ props.placeholder }
       value={props.text}
