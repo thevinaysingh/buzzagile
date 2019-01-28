@@ -14,8 +14,12 @@ import {
 } from 'react-native';
 import NavigationBar from '../../components/NavigationBar';
 import images from 'assets/images';
+import QuizOption from './QuizOption';
 
 export let navigatorObject = null;
+
+const header = "Please Select Quizz Mode";
+const detail = "There are many variation of passages of Loram ipsam available, but the majority have suffered alteration in some form";
 
 class Home extends Component {
   constructor(props) {
@@ -26,32 +30,34 @@ class Home extends Component {
   componentDidMount() {
 
   }
+
   sideMenuAction() {
-    console.log('============', this.props )
-    this.props.navigation.navigate('DrawerOpen');
+    this.props.navigation.openDrawer('DrawerOpen');
   }
+
   popBack() {
     const { goBack } = this.props.navigation;
     goBack(null);
   }
+
   render() {
     return (
       <View style={{ flex: 1 }}>
-      <NavigationBar
-        title='test'
-        showBackButton={Boolean(true)}
-        // backButtonImage={images.backbutton}
-        // backButtonAction={() => this.popBack()}
-        backButtonAction={() => this.sideMenuAction()}
-        hideRightView={true}
-      />
-        <TouchableOpacity
-              activeOpacity={0.9}
-              onPress={() => this.popBack()}
-              style={{ color: 'black', height: 50, width: 60 , backgroundColor: 'red'}}
-            >
-         <Text>Back</Text>
-         </TouchableOpacity>
+        <NavigationBar
+          title='Dashboard'
+          showBackButton={Boolean(false)}
+          // backButtonImage={images.backbutton}
+          // backButtonAction={() => this.popBack()}
+          rightButtonAction={ () => this.sideMenuAction() }
+          showRightButton={Boolean(true)}
+        />
+        <View style={{ flex: 1, alignItems: 'center', marginHorizontal: 30 }}>
+          <Text style={{ fontSize: 20, color: 'purple' }}>{ header }</Text>
+          <Text style={{ marginTop: 15, color: 'gray', textAlign: 'center' }}>{ detail }</Text>
+        </View>
+        <View style={{flex: 4, backgroundColor: 'green'}}>
+          <QuizOption />
+        </View>
       </View>
     );
   }
