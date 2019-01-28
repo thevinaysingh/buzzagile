@@ -6,25 +6,24 @@ import {
   Image,
   View,
   Platform,
+  TouchableOpacity,
 } from 'react-native';
 import { images } from 'assets/images';
 import { width } from 'config/appConfig';
 
-const leftPadding = (Platform.OS === 'android') ? 56 : 64;
-
 const styles = StyleSheet.create({
   viewProfileContainer: {
-    height: 160,
+    height: 240,
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 1,
+    borderWidth: 0,
     borderBottomColor: 'red',
-    paddingTop: 15,
+    // paddingTop: 15,
   },
   viewProfile: {
-    width: 70,
-    height: 70,
-    borderRadius: 35,
+    width: 120,
+    height: 120,
+    borderRadius: 60,
     backgroundColor: 'white',
     borderWidth: 2,
   },
@@ -40,50 +39,48 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   defaultWhiteLabel: {
-    fontSize: 14,
+    fontSize: 22,
     color: 'white',
     marginTop: 5,
+    padding: 0,
+    fontWeight: 'bold',
   },
-  lineView: {
-    position: 'absolute',
-    height: 1,
-    width: width - leftPadding,
-    bottom: 0,
-    opacity: 0.5,
+  crossButtonView: {
+    justifyContent: 'flex-end',
+    flex: 1,
+    alignItems: 'flex-end',
   },
-  backgroundImage: {
-    height: 160,
-    width: width - leftPadding,
-    resizeMode: 'cover',
+  crossButton: {
+    height: 50,
+    width: 50,
+    backgroundColor: 'green',
   },
 });
 
 const SideMenuHeader = props => (
-    <View style={styles.viewProfileContainer}>
-      <View style={styles.viewProfile}>
+  <View style={{ flex: 1, backgroundColor: 'orange' }}>
+    <View style={ styles.crossButtonView }>
+      <TouchableOpacity
+        style={ styles.crossButton }
+        onPress={ () => props.sideMenuClose() }
+      />
+    </View>
+    <View style={ styles.viewProfileContainer }>
+      <View style={ styles.viewProfile }>
         <Image
-          style={styles.avatarStyle}
-          source={images.profilePic}
+          style={ styles.avatarStyle }
+          source={ images.profilePic }
         />
       </View>
-      <Text style={styles.largeWhiteLabel}>Jhon Smith</Text>
-      <View style={{flex: 1, flexDirection: 'row'}}>
-        <View style={{ height: 40}} >
+      <Text style={ styles.largeWhiteLabel }>Jhon Smith</Text>
+      <View style={{ height: 40, marginTop: 40 }}>
         <Text
-            style={[styles.defaultWhiteLabel, { padding: 0 }]}
-          >{'Account Balance:'}
-          </Text>
-        </View>
-        <View style={{ height: 40 }} >
-        <Text
-            style={[styles.defaultWhiteLabel, { padding: 0, fontWeight: 'bold' }]}
-          >{'$ 145.00'}
-          </Text>
-        </View>
+          style={ styles.defaultWhiteLabel }
+        >{ '145.00' }
+        </Text>
       </View>
-
-      <View style={styles.lineView} />
     </View>
+  </View>
 );
 
 SideMenuHeader.propTypes = {

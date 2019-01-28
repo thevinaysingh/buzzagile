@@ -8,7 +8,8 @@ import {
   StyleSheet,
   TouchableOpacity,
   Dimensions,
-  ImageBackground
+  ImageBackground,
+  SafeAreaView,
 } from 'react-native';
 import { images } from 'assets/images';
 import { NavBarHeight, isIOS, isIphoneX } from 'utils/helpers';
@@ -18,26 +19,23 @@ const { width } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'white',
+    backgroundColor: 'transparent',
     flexDirection: 'row',
-    height: isIOS ? (isIphoneX ? 84 : 64) : 54,
+    height: 120,
     alignSelf: 'stretch',
     alignItems: 'center',
     justifyContent: 'space-between',
   },
   headerView: {
     flex: 1,
-    alignItems: 'flex-start',
-    justifyContent: 'center',
     justifyContent: 'center',
     alignItems: 'center',
-    marginRight: 60
+    // backgroundColor: 'green',
   },
   titleText: {
     color: colors.appRedColor,
     fontSize: 20,
     textAlign: 'center',
-    // fontFamily: 'RobotoCondensed-Bold',
   },
   leftView: {
     flex: 0.18,
@@ -86,39 +84,52 @@ const NavBar = ({
   rightButtonAction,
   hideRightView,
 }) => (
-  <View style={styles.container}>
-    {/* <ImageBackground
-      style={styles.backgroundImage}
-      source={images.headerBg}
-      resizeMode="cover"
-    > */}
-      <View style={styles.leftView}>
-        {showBackButton ?
-          <TouchableOpacity
-            onPress={() => backButtonAction()}
-          >
-            <Text>hello</Text>
-          </TouchableOpacity>
+  <View style={ styles.container }>
+    <ImageBackground
+      style={{ height: '100%', width: '100%', flexDirection: 'row' }}
+      source={ images.headerBg }
+      // resizeMode="cover"
+    >
+      <View style={{ width: 60, justifyContent: 'center', alignItems: 'center' }}>
+        { showBackButton
+          ? (
+            <TouchableOpacity
+              onPress={ () => backButtonAction() }
+            >
+              <Text>Back</Text>
+            </TouchableOpacity>
+          )
           : null }
       </View>
-      <View style={styles.headerView}>
-        <Text style={styles.titleText}>{title}</Text>
+      <View style={{ flex: 1, justifyContent: 'center' }}>
+        <Text style={ styles.titleText }>{ title }</Text>
       </View>
-    {/* </ImageBackground> */}
+      <View style={{ width: 60, justifyContent: 'center', alignItems: 'center' }}>
+        { showRightButton
+          ? (
+            <TouchableOpacity
+              onPress={ () => rightButtonAction() }
+            >
+              <Text>Menu</Text>
+            </TouchableOpacity>
+          )
+          : null }
+      </View>
+    </ImageBackground>
   </View>
 );
 
 NavBar.propTypes = {
-  title: PropTypes.string,
+  backButtonAction: PropTypes.func,
+  backButtonImage: PropTypes.any,
+  hideRightView: PropTypes.bool,
   leftView: PropTypes.element,
+  rightButtonAction: PropTypes.func,
+  rightButtonImage: PropTypes.any,
   rightView: PropTypes.element,
   showBackButton: PropTypes.bool,
   showRightButton: PropTypes.bool,
-  backButtonImage: PropTypes.any,
-  backButtonAction: PropTypes.func,
-  rightButtonImage: PropTypes.any,
-  rightButtonAction: PropTypes.func,
-  hideRightView: PropTypes.bool,
+  title: PropTypes.string,
 };
 
 NavBar.defaultProps = {

@@ -16,7 +16,8 @@ export const DrawerStack = DrawerNavigator({
     },
   },
 }, {
+  drawerPosition: 'right',
   initialRouteName: screens.HOME,
   contentComponent: SideMenu,
-  drawerWidth: width - 80,
+  drawerWidth: width,
 });

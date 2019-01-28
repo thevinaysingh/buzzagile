@@ -4,10 +4,13 @@ import LocalizedStrings from 'react-native-localization';
 export const localizeStrings = new LocalizedStrings({
   // English
   en: {
-    Test: 'Account Balance',
-    Test1: 'Lobby',
-    Test2: 'Match Detail',
-    Test3: 'My Bets',
+    leader_board: 'Leader Board',
+    statics: 'Statics',
+    profile: 'Profile',
+    setting: 'Setting',
+    invite_friends: 'Invite Friends',
+    upcomming_challenges: 'Upcomming Challenges',
+    notification: 'Notification',
     logout: 'Logout',
   },
   // German

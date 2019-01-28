@@ -22,57 +22,27 @@ const leftPadding = (Platform.OS === 'android') ? 56 : 64;
 
 const menuData = [
   {
-    // name: localizeStrings.lobby,
+    name: localizeStrings.leader_board,
     // icon: images.lobby,
   },
   {
-  //   name: localizeStrings.matchDetail,
-    // icon: images.lock,
+    name: localizeStrings.statics,    // icon: images.lock,
   },
   {
-    // name: localizeStrings.mybets,
-    // icon: images.mybets,
+    name: localizeStrings.profile,    // icon: images.mybets,
   },
   {
-    // name: localizeStrings.myProfile,
-    // icon: images.profile,
+    name: localizeStrings.setting,    // icon: images.profile,
   },
   {
-    // name: localizeStrings.myWallet,
-    // icon: images.wallet,
+    name: localizeStrings.invite_friends,    // icon: images.wallet,
   },
-  // {
-  //   // name: localizeStrings.notifications,
-  //   icon: images.notification,
-  // },
-  // {
-  //   name: localizeStrings.myStats,
-  //   icon: images.mystats,
-  // },
-  // {
-  //   name: localizeStrings.leaderboard,
-  //   icon: images.leaderboard,
-  // },
-  // {
-  //   name: localizeStrings.help,
-  //   icon: images.help,
-  // },
-  // {
-  //   name: localizeStrings.myFinance,
-  //   icon: images.lock,
-  // },
-  // {
-  //   name: localizeStrings.invitations,
-  //   icon: images.lock,
-  // },
-  // {
-  //   name: localizeStrings.notifications,
-  //   icon: images.lock,
-  // },
-  // {
-  //   name: localizeStrings.help,
-  //   icon: images.lock,
-  // },
+  {
+    name: localizeStrings.upcomming_challenges,    // icon: images.wallet,
+  },
+  {
+    name: localizeStrings.notification,    // icon: images.wallet,
+  },
   {
     name: localizeStrings.logout,
     // icon: images.logout,
@@ -82,19 +52,17 @@ const menuData = [
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: color.DarkGray,
-    // paddingTop: 20,
   },
 
   bodyView: {
-    flex: 1,
-    backgroundColor: 'white',
+    flex: 1.5,
+    // backgroundColor: 'white',
     width: width - leftPadding,
-    marginTop: 20,
+    marginHorizontal: 50,
+    backgroundColor: 'red',
   },
   flatListStyle: {
     flex: 1,
-    // backgroundColor: color.DarkGray,
   },
 });
 
@@ -107,47 +75,37 @@ class Sidebar extends Component {
   }
 
   onPressMenuItem(selectedItem) {
-    console.log('********** menu', selectedItem);
+    console.log('********** menu', selectedItem, localizeStrings.leader_board);
     switch (selectedItem) {
-      case localizeStrings.lobby:
-        this.props.navigation.navigate('DrawerClose');
-        break;
-        case localizeStrings.mybets:
-        this.props.navigation.navigate('DrawerClose');
-        this.props.navigation.navigate('MyBets');
-        break;
-      case localizeStrings.matchDetail:
-        this.navigateToScreen('MatchDetail');
-        break;
-      case localizeStrings.myProfile:
-        this.navigateToScreen('Profile');
-        break;
-      case localizeStrings.createLeague:
-        showPopupAlert('This will be covered in next milestone');
-        break;
-      case localizeStrings.myFinance:
-        showPopupAlert('This will be covered in next milestone');
-        break;
-      case localizeStrings.invitations:
-        showPopupAlert('This will be covered in next milestone');
-        break;
-      case localizeStrings.leaderboard:
-        showPopupAlert('This will be covered in next milestone');
-        break;
-      case localizeStrings.notifications:
-        showPopupAlert('This will be covered in next milestone');
-        break;
-      case localizeStrings.help:
-        showPopupAlert('This will be covered in next milestone');
-        break;
-      case localizeStrings.logout:
-        this.props.navigation.navigate('DrawerClose');
-        this.logoutUser();
-        // showPopupAlert('This will be covered in next milestone');
-        break;
-      default:
-        break;
-        // Do nothing
+    case localizeStrings.leader_board:
+      this.props.navigation.closeDrawer('DrawerClose');
+      break;
+    case localizeStrings.statics:
+      this.props.navigation.closeDrawer('DrawerClose');
+      // this.props.navigation.navigate('MyBets');
+      break;
+    case localizeStrings.profile:
+      // this.navigateToScreen('MatchDetail');
+      break;
+    case localizeStrings.setting:
+      // this.navigateToScreen('Profile');
+      break;
+    case localizeStrings.invite_friends:
+      // this.navigateToScreen('Profile');
+      break;
+    case localizeStrings.upcomming_challenges:
+      // this.navigateToScreen('Profile');
+      break;
+    case localizeStrings.notification:
+      // this.navigateToScreen('Profile');
+      break;
+    case localizeStrings.logout:
+      // this.props.navigation.navigate('DrawerClose');
+      // this.logoutUser();
+      // showPopupAlert('This will be covered in next milestone');
+      break;
+    default:
+      break;
     }
   }
 
@@ -164,10 +122,15 @@ class Sidebar extends Component {
   getRenderRow(data) {
     return (
       <SideMenuCell
-        data={data.item}
-        onPressMenuItem={selectedItem => this.onPressMenuItem(selectedItem)}
+        data={ data.item }
+        onPressMenuItem={ selectedItem => this.onPressMenuItem(selectedItem) }
       />
     );
+  }
+
+  sideMenuClose() {
+    console.log('=========', this.props.navigation)
+    this.props.navigation.closeDrawer('DrawerClose');
   }
 
   // callLogoutRequest() {
@@ -190,14 +153,14 @@ class Sidebar extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <SideMenuHeader />
-        <View style={styles.bodyView}>
+        <SideMenuHeader sideMenuClose={ () => this.sideMenuClose() } />
+        <View style={ styles.bodyView}>
           <FlatList
-            style={styles.flatListStyle}
-            data={this.state.menuItems}
-            renderItem={data => this.getRenderRow(data)}
-            keyExtractor={item => item.name}
-            scrollEnabled={Boolean(true)}
+            style={ styles.flatListStyle }
+            data={ this.state.menuItems }
+            renderItem={ data => this.getRenderRow(data) }
+            keyExtractor={ item => item.name }
+            scrollEnabled={ Boolean(true) }
           />
         </View>
       </View>
