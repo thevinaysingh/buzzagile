@@ -12,6 +12,12 @@ export const screens = {
   INITIAL_SCREEN: 'Splash',
   CREATE_PROFILE: 'CreateProfile',
   DRAWER_STACK: 'DrawerStack',
+  LEADERBOARD: 'Leaderboard',
+  STATICS: 'Statics',
+  SETTINGS: 'Settings',
+  INVITE_FRIENDS: 'InviteFriends',
+  UPCOMMING_CHALLENGES: 'UpcommingChallenges',
+  NOTIFICATION: 'Notification',
 };
 
 export const createKeyScreen = screen => `${screen}Screen`;
