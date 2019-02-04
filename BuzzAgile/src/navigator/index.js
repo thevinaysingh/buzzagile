@@ -10,11 +10,13 @@ import Leaderboard from 'screens/Leaderboard';
 import InviteFriends from 'screens/InviteFriends';
 import Notifications from 'screens/Notifications';
 import Settings from 'screens/Settings';
+import Statics from 'screens/Statics';
 import UpcommingChallenges from 'screens/UpcommingChallenges';
 import PhoneVerification from 'screens/PhoneVerification';
 import CreateProfile from 'screens/CreateProfile';
 import { DrawerStack } from './dashboardStack';
 import { createKeyScreen, screens } from './screens-name';
+
 
 const RootNavigator = StackNavigator({
   Dashboard: { screen: DrawerStack },
@@ -91,7 +93,7 @@ const RootNavigator = StackNavigator({
     },
   },
   InviteFriends: {
-    key: createKeyScreen(screens.LEADERBOARD),
+    key: createKeyScreen(screens.INVITE_FRIENDS),
     screen: InviteFriends,
     navigationOptions: {
       header: null,
@@ -99,7 +101,7 @@ const RootNavigator = StackNavigator({
     },
   },
   UpcommingChallenges: {
-    key: createKeyScreen(screens.LEADERBOARD),
+    key: createKeyScreen(screens.UPCOMMING_CHALLENGES),
     screen: UpcommingChallenges,
     navigationOptions: {
       header: null,
@@ -107,7 +109,7 @@ const RootNavigator = StackNavigator({
     },
   },
   Settings: {
-    key: createKeyScreen(screens.LEADERBOARD),
+    key: createKeyScreen(screens.SETTINGS),
     screen: Settings,
     navigationOptions: {
       header: null,
@@ -115,8 +117,16 @@ const RootNavigator = StackNavigator({
     },
   },
   Notifications: {
-    key: createKeyScreen(screens.LEADERBOARD),
+    key: createKeyScreen(screens.NOTIFICATION),
     screen: Notifications,
+    navigationOptions: {
+      header: null,
+      gesturesEnabled: false,
+    },
+  },
+  Statics: {
+    key: createKeyScreen(screens.STATICS),
+    screen: Statics,
     navigationOptions: {
       header: null,
       gesturesEnabled: false,

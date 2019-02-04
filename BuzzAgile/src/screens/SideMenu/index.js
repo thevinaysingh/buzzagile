@@ -17,6 +17,7 @@ import SideMenuHeader from './components/SideMenuHeader';
 import { resetRoute } from 'utils/helpers';
 import constant, { color, width } from 'config/appConfig';
 import { localizeStrings } from './localizeStrings';
+import { screens } from '../../navigator/screens-name';
 
 const leftPadding = (Platform.OS === 'android') ? 56 : 64;
 
@@ -75,38 +76,49 @@ class Sidebar extends Component {
   }
 
   onPressMenuItem(selectedItem) {
-    console.log('********** menu', selectedItem, localizeStrings.leader_board);
-    switch (selectedItem) {
-    case localizeStrings.leader_board:
-      this.props.navigation.closeDrawer('DrawerClose');
-      break;
-    case localizeStrings.statics:
-      this.props.navigation.closeDrawer('DrawerClose');
-      // this.props.navigation.navigate('MyBets');
-      break;
-    case localizeStrings.profile:
-      // this.navigateToScreen('MatchDetail');
-      break;
-    case localizeStrings.setting:
-      // this.navigateToScreen('Profile');
-      break;
-    case localizeStrings.invite_friends:
-      // this.navigateToScreen('Profile');
-      break;
-    case localizeStrings.upcomming_challenges:
-      // this.navigateToScreen('Profile');
-      break;
-    case localizeStrings.notification:
-      // this.navigateToScreen('Profile');
-      break;
-    case localizeStrings.logout:
-      // this.props.navigation.navigate('DrawerClose');
-      // this.logoutUser();
-      // showPopupAlert('This will be covered in next milestone');
-      break;
-    default:
-      break;
-    }
+    console.log('********** menu', selectedItem, localizeStrings.leader_board, this.props.navigation);
+
+    // this.props.navigation.closeDrawer('DrawerClose');
+    // this.props.navigation.navigate(screens.LEADERBOARD);
+    // this.props.navigation.navigate(screens.INVITE_FRIENDS);
+    this.props.navigation.navigate(screens.NOTIFICATION);
+    // this.props.navigation.navigate(screens.UPCOMMING_CHALLENGES);
+    // this.props.navigation.navigate(screens.STATICS);
+    // this.props.navigation.navigate(screens.CREATE_PROFILE);
+    // this.props.navigation.navigate(screens.SETTINGS);
+
+
+    // switch (selectedItem) {
+    // case localizeStrings.leader_board:
+    //   this.props.navigation.navigate('LeaderboardScreen');
+    //   break;
+    // case localizeStrings.statics:
+    //   this.props.navigation.closeDrawer('DrawerClose');
+    //   // this.props.navigation.navigate('MyBets');
+    //   break;
+    // case localizeStrings.profile:
+    //   // this.navigateToScreen('MatchDetail');
+    //   break;
+    // case localizeStrings.setting:
+    //   // this.navigateToScreen('Profile');
+    //   break;
+    // case localizeStrings.invite_friends:
+    //   // this.navigateToScreen('Profile');
+    //   break;
+    // case localizeStrings.upcomming_challenges:
+    //   // this.navigateToScreen('Profile');
+    //   break;
+    // case localizeStrings.notification:
+    //   // this.navigateToScreen('Profile');
+    //   break;
+    // case localizeStrings.logout:
+    //   // this.props.navigation.navigate('DrawerClose');
+    //   // this.logoutUser();
+    //   // showPopupAlert('This will be covered in next milestone');
+    //   break;
+    // default:
+    //   break;
+    // }
   }
 
   navigateToScreen(screenName) {

@@ -17,7 +17,7 @@ export const screens = {
   SETTINGS: 'Settings',
   INVITE_FRIENDS: 'InviteFriends',
   UPCOMMING_CHALLENGES: 'UpcommingChallenges',
-  NOTIFICATION: 'Notification',
+  NOTIFICATION: 'Notifications',
 };
 
 export const createKeyScreen = screen => `${screen}Screen`;

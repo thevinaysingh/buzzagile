@@ -4,7 +4,7 @@ import LocalizedStrings from 'react-native-localization';
 export const localizeStrings = new LocalizedStrings({
   // English
   en: {
-    leader_board: 'Leader Board',
+    leader_board: 'Leaderboard',
     statics: 'Statics',
     profile: 'Profile',
     setting: 'Setting',

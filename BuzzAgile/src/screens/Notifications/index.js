@@ -7,7 +7,7 @@ import RoundedButtonFilled from 'components/RoundedButtonFilled';
 import Logo from 'components/Logo';
 import CustomText from 'components/CustomText';
 import { images } from 'assets/images';
-
+import Navigation from 'components/NavigationBar';
 /**
   * @desc this class will display the options to redirect to login or signup
   * @author Pushpendra mishra pushpendra.mishra660@gmail.com
@@ -30,8 +30,8 @@ class Welcome extends Component {
   render() {
     return (
       <RootContainer>
-        <View style={{ flex: 2, alignItems: 'center' }}>
-          <Logo />
+        <View style={{ flex: 2, alignItems: 'center', backgroundColor: 'green' }}>
+          <Navigation />
         </View>
       </RootContainer>
     );
