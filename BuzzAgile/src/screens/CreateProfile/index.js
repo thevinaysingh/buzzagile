@@ -73,7 +73,7 @@ class CreateProfile extends Component {
     return (
       <View style={{ flex: 1, backgroundColor: 'white' }}>
         <View style={{ flex: 1.5, alignItems: 'center' }}>
-          <ImageView profileImage={ images.profileImage } />
+          <ImageView profileImage={ images.profile } />
         </View>
         <View style={{ flex: 2, alignItems: 'center' }}>
           <CustomInput
@@ -94,11 +94,11 @@ class CreateProfile extends Component {
         </View>
         <View style={{ flex: 1, alignItems: 'center' }}>
           <RoundedButtonFilled
-            imagebg={ images.facebook }
+            imagebg={ images.facebook_btn }
             onPress={ () => this.loginPress() }
           />
           <RoundedButtonFilled
-            imagebg={ images.submit }
+            imagebg={ images.submit_btn }
             onPress={ () => this.loginPress() }
           />
         </View>

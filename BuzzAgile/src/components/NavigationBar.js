@@ -87,7 +87,7 @@ const NavBar = ({
   <View style={ styles.container }>
     <ImageBackground
       style={{ height: '100%', width: '100%', flexDirection: 'row' }}
-      source={ images.headerBg }
+      source={ images.header_bg_purple }
       // resizeMode="cover"
     >
       <View style={{ width: 60, justifyContent: 'center', alignItems: 'center' }}>

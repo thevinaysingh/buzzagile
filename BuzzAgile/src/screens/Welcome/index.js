@@ -36,14 +36,14 @@ class Welcome extends Component {
         <View style={{ flex: 1.2, alignItems: 'center' }}>
           <CustomText title={'Don`t have any account'} />
           <RoundedButtonFilled
-            imagebg={ images.getStart }
+            imagebg={ images.get_started_btn }
             onPress={ () => this.onPressGetStarted() }
           />
         </View>
         <View style={{ flex: 1.5, alignItems: 'center' }}>
           <CustomText title={'Already have any account'} />
           <RoundedButtonFilled
-            imagebg={ images.login }
+            imagebg={ images.signin_btn }
             onPress={ () => this.onPressLogin() }
           />
         </View>

@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
 
 const CustomInput = props => (
   <ImageBackground
-    source={ images.inputField }
+    source={ images.rounded_btn_bg_white }
     style={ styles.RoundedbuttonStyle }
   >
     <TextInput

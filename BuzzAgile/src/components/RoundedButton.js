@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
 
 const RoundedButton = props => (
   <ImageBackground
-    source={ images.roundedborder }
+    source={ images.btn_rounded_border }
     style={ styles.roundedbuttonStyle }
   >
     <TouchableOpacity

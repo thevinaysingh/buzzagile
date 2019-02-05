@@ -56,7 +56,7 @@ class Login extends Component {
         </View>
         <View style={{ flex: 1, alignItems: 'center' }}>
           <RoundedButtonFilled
-            imagebg={ images.login }
+            imagebg={ images.signin_btn }
             onPress={ this.onPressLogin }
           />
           <CustomText title="Terms & conditions" />

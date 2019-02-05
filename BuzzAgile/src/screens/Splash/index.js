@@ -23,7 +23,7 @@ class Splash extends Component {
   }
 
   pushNextScreen() {
-    this.props.navigation.navigate(screens.HOME);
+    this.props.navigation.navigate(screens.ON_BOARDING);
   }
 
   render() {

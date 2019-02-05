@@ -44,12 +44,10 @@ class Home extends Component {
     return (
       <View style={{ flex: 1 }}>
         <NavigationBar
-          title='Dashboard'
-          showBackButton={Boolean(false)}
-          // backButtonImage={images.backbutton}
-          // backButtonAction={() => this.popBack()}
+          title="Dashboard"
+          showBackButton={ Boolean(false) }
           rightButtonAction={ () => this.sideMenuAction() }
-          showRightButton={Boolean(true)}
+          showRightButton={ Boolean(true) }
         />
         <View style={{ flex: 1, alignItems: 'center', marginHorizontal: 30 }}>
           <Text style={{ fontSize: 20, color: 'purple' }}>{ header }</Text>

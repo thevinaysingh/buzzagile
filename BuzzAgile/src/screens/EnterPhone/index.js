@@ -48,7 +48,7 @@ class EnterPhone extends Component {
             onChange={ this.onChangePhoneNumber }
           />
           <RoundedButtonFilled
-            imagebg={ images.nextButtonImage }
+            imagebg={ images.next_btn }
             onPress={ this.onPressNext }
           />
         </View>

@@ -50,7 +50,7 @@ class PhoneVerification extends Component {
             onChange={ this.onChangeCode }
           />
           <RoundedButtonFilled
-            imagebg={ images.nextButtonImage }
+            imagebg={ images.next_btn }
             onPress={ this.onPressDone }
           />
         </View>

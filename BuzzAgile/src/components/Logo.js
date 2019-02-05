@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
 
 const Logo = () => (
   <Image
-    source={ images.logoImage }
+    source={ images.logo_image }
     style={ styles.RoundedbuttonStyle }
     resizeMode='contain'
   />

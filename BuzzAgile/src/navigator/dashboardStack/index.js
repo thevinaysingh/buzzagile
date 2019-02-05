@@ -1,7 +1,7 @@
 import { Dimensions } from 'react-native';
 import { DrawerNavigator } from 'react-navigation';
 import SideMenu from 'screens/SideMenu';
-import Home from 'screens/home';
+import Home from 'screens/Home';
 import { createKeyScreen, screens } from '../screens-name';
 
 const { width } = Dimensions.get('window');
