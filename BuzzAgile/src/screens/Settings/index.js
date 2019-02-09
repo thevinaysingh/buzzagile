@@ -8,6 +8,9 @@ import Logo from 'components/Logo';
 import CustomText from 'components/CustomText';
 import { images } from 'assets/images';
 import Navigation from 'components/NavigationBar';
+import Notification from './Components/Notification';
+import Interest from './Components/Interest';
+import Languages from './Components/Languages';
 /**
   * @desc this class will display the options to redirect to login or signup
   * @author Pushpendra mishra pushpendra.mishra660@gmail.com
@@ -17,6 +20,9 @@ import Navigation from 'components/NavigationBar';
 class Welcome extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      switchOn: true,
+    };
   }
 
   onPressGetStarted() {
@@ -27,12 +33,20 @@ class Welcome extends Component {
     this.props.navigation.navigate(screens.LOGIN);
   }
 
+  toggleButton(a) {
+    this.setState({ switchOn: a });
+  }
+
   render() {
     return (
       <RootContainer>
-        <View style={{ flex: 2, alignItems: 'center', backgroundColor: 'orange' }}>
+        <View style={{ flex: 2, alignItems: 'center' }}>
           <Navigation />
+          <Notification switchOn={this.state.switchOn} toggleButton={ a => this.toggleButton(a) } />
+          <Interest />
+          <Languages />
         </View>
+        
       </RootContainer>
     );
   }

@@ -81,11 +81,11 @@ class Sidebar extends Component {
     // this.props.navigation.closeDrawer('DrawerClose');
     // this.props.navigation.navigate(screens.LEADERBOARD);
     // this.props.navigation.navigate(screens.INVITE_FRIENDS);
-    this.props.navigation.navigate(screens.NOTIFICATION);
+    // this.props.navigation.navigate(screens.NOTIFICATION);
     // this.props.navigation.navigate(screens.UPCOMMING_CHALLENGES);
     // this.props.navigation.navigate(screens.STATICS);
     // this.props.navigation.navigate(screens.CREATE_PROFILE);
-    // this.props.navigation.navigate(screens.SETTINGS);
+    this.props.navigation.navigate(screens.SETTINGS);
 
 
     // switch (selectedItem) {
