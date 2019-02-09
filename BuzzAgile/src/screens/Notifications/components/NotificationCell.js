@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderBottomColor: 'grey',
     borderBottomWidth: 0.5,
-    height: 85,
+    height: 90,
   },
   optionalView: {
     flexDirection: 'row',
@@ -38,18 +38,18 @@ const styles = StyleSheet.create({
   },
   textStyle: {
     color: 'purple',
-    fontSize: 12,
+    fontSize: 13,
+    justifyContent: 'center',
+    // textAlign: 'center',
   },
   optionView: {
     justifyContent: 'flex-end',
     alignItems: 'center',
     width: '100%',
     flexDirection: 'row',
-    // marginVertical: 15,
   },
   optionContainer: {
     justifyContent: 'space-between',
-    alignItems: 'center',
     flexDirection: 'row',
     width: '90%',
   },
@@ -59,40 +59,44 @@ const NotificationCell = (props) => {
   return (
     <View style={ styles.container }>
       <View style={ styles.optionalView }>
-        <View style={ styles.imageContainer }>
+        <View style={ [styles.imageContainer, { marginLeft: 5}] }>
           <Image
-            source={ images.prize }
+            source={ images.sphere_purple }
             style={{ width: 30, height: 30 }}
           />
         </View>
-        <View style={{ flex: 3.5, backgroundColor: 'red' }}>
+        <View style={{ flex: 4, marginLeft: 5 }}>
           <Text style={ styles.textStyle }>
-            notification is here this view is for optional text.
+            Notification is here this view is for optional text.
           </Text>
         </View>
-        <View style={[styles.imageContainer, { flex: 1.5, backgroundColor: 'green' }]}>
-          <Image
-            source={ images.yelloRupeeButtom }
-            style={{ width: 30, height: 30 }}
-          />
+        <View style={[styles.imageContainer, { flex: 1 }]}>
+          <ImageBackground
+            source={ images.rupee_btn }
+            style={{ width: 60, height: 30 }}
+          >
+            <Text style={{ justifyContent: 'center', textAlign: 'center', width: 40, top: 5 }}>hiii</Text>
+          </ImageBackground>
         </View>
       </View>
       <View style={ styles.optionView }>
         <View style={ styles.optionContainer }>
           <TouchableOpacity
             onPress={() => null}
-            style={{ height: 30, width: 50, backgroundColor: 'red' }}
+            style={{ height: 30, width: 50 }}
           >
             <Image
-              source={ images.yelloRupeeButtom }
+              source={ images.rupee_btn }
+              style={{ width: 80, height: 40 }}
             />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() =>null }
-            style={{ height: 30, width: 50, backgroundColor: 'green', marginRight: 50 }}
+            onPress={() => null }
+            style={{ height: 30, width: 50, marginRight: 50 }}
           >
             <Image
-              source={ images.yelloRupeeButtom }
+              source={ images.rupee_btn }
+              style={{ width: 80, height: 40 }}
             />
           </TouchableOpacity>
         </View>
