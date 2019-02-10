@@ -20,6 +20,7 @@
         "no-mixed-spaces-and-tabs": 1,
         "no-underscore-dangle": 0,
         "camelcase": 0,
+        "class-methods-use-this": 0,
 
         "prefer-arrow-callback": 1,
         
