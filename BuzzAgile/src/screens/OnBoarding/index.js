@@ -11,6 +11,11 @@ const styles = StyleSheet.create({
   image: {
     width: 320,
     height: 320,
+    resizeMode: 'contain',
+  },
+  text: {
+    color: 'darkgrey',
+    marginVertical: 40,
   },
 });
 
@@ -19,6 +24,7 @@ const slides = [
     key: 'screen-one',
     title: 'Title 1',
     text: 'Description.\nSay something cool',
+    textStyle: styles.text,
     image: images.logo_image,
     imageStyle: styles.image,
     backgroundColor: Colors.appWhiteColor,
@@ -27,6 +33,7 @@ const slides = [
     key: 'screen-two',
     title: 'Title 2',
     text: 'Other cool stuff',
+    textStyle: styles.text,
     image: images.logo_image,
     imageStyle: styles.image,
     backgroundColor: Colors.appWhiteColor,
@@ -35,6 +42,7 @@ const slides = [
     key: 'screen-three',
     title: 'Rocket guy',
     text: 'I\'m already out of descriptions\n\nLorem ipsum bla bla bla',
+    textStyle: styles.text,
     image: images.logo_image,
     imageStyle: styles.image,
     backgroundColor: Colors.appWhiteColor,
@@ -63,6 +71,7 @@ class OnBoarding extends Component {
           buttonTextStyle={{ color: Colors.appBlackColor }}
           slides={ slides }
           onDone={ () => this.onDone() }
+          onSkip={ () => this.onDone() }
         />
       </RootContainer>
     );
