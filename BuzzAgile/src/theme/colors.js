@@ -2,10 +2,11 @@
 /* Start */
 
 const appRedColor = '#ff0032';
-const appVioletlor = 'rgb(121, 104, 197)';
+const appVioletColor = 'rgb(121, 104, 197)';
 const appGreyColor = '#22272e';
 const appWhiteColor = 'white';
 const appBlackColor = 'black';
+const semiTransparent = '#00000050';
 
 /* Actual colors */
 /* Stop */
@@ -18,7 +19,8 @@ export default {
   appGreyColor,
   appWhiteColor,
   appBlackColor,
-  appVioletlor,
+  appVioletColor,
+  semiTransparent,
 };
 
 /* Colors used in whole application */
