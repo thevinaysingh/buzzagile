@@ -8,6 +8,7 @@ import {
   ImageBackground,
 } from 'react-native';
 import { images } from '../assets/images';
+import colors from '../theme/colors';
 
 const styles = StyleSheet.create({
   buttonStyle: {
@@ -16,7 +17,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     marginTop: 0,
     height: 40,
-    color: '#0000ff',
+    color: colors.appVioletColor,
   },
   roundedbuttonStyle: {
     width: '70%',
