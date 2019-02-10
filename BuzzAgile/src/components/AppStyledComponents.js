@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+export const DefaultLabel = styled.Text`
+  color: black;
+  font-size: 14;
+`;
+
 export const RootContainer = styled.View`
   display: flex;
   flex: 1;
