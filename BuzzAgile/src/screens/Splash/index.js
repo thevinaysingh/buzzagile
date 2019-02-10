@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { StackActions, NavigationActions } from 'react-navigation';
 import styled from 'styled-components';
 import { images } from 'assets/images';
 import { RootContainer } from 'components/AppStyledComponents';
 import { screens } from 'navigator/screens-name';
+import * as Storage from 'utils/storage';
+import { CONSTANTS } from 'utils/constants';
 
 /**
   * @desc this class will display the splash image only
@@ -19,11 +22,36 @@ class Splash extends Component {
   }
 
   componentDidMount() {
-    setTimeout(() => { this.pushNextScreen(); }, SPLASH_TIME_OUT);
+    Storage.getItemWithKey(CONSTANTS.KEYS.ACCESS_TOKEN, (response) => {
+      if (response) {
+        this.goToScreen(screens.DASHBOARD);
+      } else {
+        this.checkAppOpenedFirstTime();
+      }
+    });
   }
 
-  pushNextScreen() {
-    this.props.navigation.navigate(screens.ON_BOARDING);
+  checkAppOpenedFirstTime() {
+    Storage.getItemWithKey(CONSTANTS.KEYS.APP_NOT_OPEN_FIRST_TIME, (response) => {
+      if (response) {
+        this.goToScreen(screens.WELCOME);
+      } else {
+        this.goToScreen(screens.ON_BOARDING);
+      }
+    });
+  }
+
+  goToScreen(screenToRedirect) {
+    setTimeout(() => {
+      const resetAction = StackActions.reset({
+        index: 0,
+        key: null,
+        actions: [
+          NavigationActions.navigate({ routeName: screenToRedirect }),
+        ],
+      });
+      this.props.navigation.dispatch(resetAction);
+    }, SPLASH_TIME_OUT);
   }
 
   render() {
